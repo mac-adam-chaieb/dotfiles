@@ -1,20 +1,21 @@
 {
-  "caret_style": "phase",
-  "close_windows_when_empty": false,
-  "color_scheme": "Packages/Color Scheme - Default/Cobalt.tmTheme",
+  "caret_extra_width": 2,
+  "color_scheme": "Packages/User/MoeCustom.tmTheme",
   "ensure_newline_at_eof_on_save": true,
-  "font_size": 12,
+  "font_face": "Ubuntu Mono",
+  "font_size": 14,
   "ignored_packages":
   [
     "Vintage"
   ],
+  "margin": 20,
+  "match_brackets": false,
   "match_brackets_angle": true,
-  "preview_on_click": false,
+  "overlay_scroll_bars": "enabled",
   "remember_full_screen": true,
+  "scroll_past_end": false,
   "tab_size": 2,
+  "theme": "Seti.sublime-theme",
   "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "font_face": "Input",
-  "font_size": 13
+  "trim_trailing_white_space_on_save": true
 }
-

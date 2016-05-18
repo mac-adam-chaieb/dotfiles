@@ -1,2 +1,2 @@
 # dotfiles
-My development setup configuration files 
+My development setup configuration files

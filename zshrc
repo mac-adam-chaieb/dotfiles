@@ -1,5 +1,5 @@
- Path to your oh-my-zsh installation.
-export ZSH=/home/vagrant/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/Moe/.oh-my-zsh
 
 echo "Don't ignore your dreams.\nDon't work too much.\nSay what you think.\nCultivate friendships.\nBe happy."
 
@@ -51,7 +51,7 @@ ZSH_THEME="pure"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler brew jsontools zsh-syntax-highlighting)
+plugins=(git sublime bundler brew jsontools zsh-syntax-highlighting)
 
 # User configuration
 
@@ -84,24 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dab="git branch | grep -v "master" | xargs git branch -D"
 
 # Adding rbenv to PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Quick Vagrant
-function v {
-  (
-    cd ~/Programming/vagrant && vagrant $*
-  )
-}
-
-function dev {
-  (
-    set -e
-    cd ~/Programming/vagrant
-    if vagrant status | grep -q 'powered off'; then vagrant up; fi
-    vagrant ssh -- -t 'exec $SHELL --login'
-  )
-}
-
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
