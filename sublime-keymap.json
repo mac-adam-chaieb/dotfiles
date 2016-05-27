@@ -1,0 +1,7 @@
+[
+  { "keys": ["alt+ctrl+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+  { "keys": ["alt+ctrl+right"], "command": "focus_neighboring_group" },
+  { "keys": ["ctrl+e"], "command": "extempore_evaluate" },
+  { "keys": ["ctrl+d"], "command": "extempore_disconnect" },
+  { "keys": ["ctrl+c"], "command": "extempore_connect" },
+]
