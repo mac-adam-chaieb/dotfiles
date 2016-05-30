@@ -29,7 +29,7 @@
         <key>invisibles</key>
         <string>#bbb</string>
         <key>lineHighlight</key>
-        <string>#333435</string>
+        <string>#444</string>
         <key>selection</key>
         <string>#3D4456E0</string>
       </dict>
@@ -88,7 +88,7 @@
       <string>entity.name</string>
       <key>settings</key>
       <dict>
-      	<key>fontStyle</key>
+        <key>fontStyle</key>
         <string>bold</string>
         <key>foreground</key>
         <string>#eee</string> <!-- White -->
@@ -129,7 +129,7 @@
       <string>variable.other.block</string>
       <key>settings</key>
       <dict>
-      	<key>fontStyle</key>
+        <key>fontStyle</key>
         <string>bold</string>
         <key>foreground</key>
         <string>#f8cb13</string> <!-- Yellow -->

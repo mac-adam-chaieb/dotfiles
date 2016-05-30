@@ -2,7 +2,7 @@
   "caret_extra_width": 2,
   "color_scheme": "Packages/User/MoeCustom.tmTheme",
   "ensure_newline_at_eof_on_save": true,
-  "font_face": "Ubuntu Mono",
+  "font_face": "Essential PragmataPro",
   "font_size": 14,
   "ignored_packages":
   [
@@ -17,5 +17,6 @@
   "tab_size": 2,
   "theme": "Seti.sublime-theme",
   "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true
+  "trim_trailing_white_space_on_save": true,
+  "highlight_line": true,
 }
