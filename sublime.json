@@ -1,13 +1,16 @@
 {
+  "bold_folder_labels": true,
   "caret_extra_width": 2,
   "color_scheme": "Packages/User/MoeCustom.tmTheme",
   "ensure_newline_at_eof_on_save": true,
-  "font_face": "Essential PragmataPro",
+  "font_face": "Iosevka",
   "font_size": 14,
+  "highlight_line": true,
   "ignored_packages":
   [
     "Vintage"
   ],
+  "index_files": true,
   "margin": 20,
   "match_brackets": false,
   "match_brackets_angle": true,
@@ -15,8 +18,7 @@
   "remember_full_screen": true,
   "scroll_past_end": false,
   "tab_size": 2,
-  "theme": "Seti.sublime-theme",
+  "theme": "Adaptive.sublime-theme",
   "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "highlight_line": true,
+  "trim_trailing_white_space_on_save": true
 }

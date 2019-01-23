@@ -1,93 +1,76 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/Moe/.oh-my-zsh
-
-echo "Don't ignore your dreams.\nDon't work too much.\nSay what you think.\nCultivate friendships.\nBe happy."
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="pure"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime bundler brew jsontools zsh-syntax-highlighting)
-
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export ZSH="/Users/moe/.oh-my-zsh"
+touch ~/.hushlogin
+ZSH_THEME=""
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# User configuration
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+autoload -U promptinit; promptinit
+prompt pure
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export VISUAL="sublime --wait"
+export EDITOR="$VISUAL"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+alias k="kubectl"
+alias subl="sublime"
+alias hack="subl ."
+alias whatsmyip="curl ifconfig.me"
+alias g="git"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dab="git branch | grep -v "master" | xargs git branch -D"
+alias gc="g checkout"
+alias gcm="gc master"
 
-# Adding rbenv to PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+alias gp="g pull"
+alias gpm="gp origin master"
+alias gpmrb="gpm --rebase"
+
+alias grb="g rebase"
+alias grbi="grb -i"
+alias grbm="grb master"
+
+alias gcom="g commit"
+alias gcoma="gcom -C HEAD --amend"
+alias gcomaa="gcom -aC HEAD --amend"
+
+alias gb="g branch"
+alias gbn="gc -b"
+alias gbr="gb -M"
+alias gbc="g rev-parse --abbrev-ref HEAD"
+alias gbd="gb -D"
+alias gbda="gb | grep -v "master" | xargs git branch -D"
+
+alias ga="g add"
+alias gd="g diff"
+
+alias gs="g status"
+alias gsp="gs --porcelain"
+
+alias gr="g reset"
+alias grh="gr --hard"
+alias grhh="grh HEAD"
+
+alias grm="g rm"
+
+alias gl="g log"
+
+first-push() { g push --set-upstream origin $(gbc); dev open pr }
+alias force-push="g push origin +HEAD"
+alias yolo-push="gcom -am 'One step at a time' && g push"
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+export DISABLE_SPRING=1
+
+source /Users/moe/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(pyenv init -)"
+
+for file in /Users/moe/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}$HOME/.kube/config:$HOME/.kube/config.shopify.cloudplatform
