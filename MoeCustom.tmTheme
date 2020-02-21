@@ -2,6 +2,7 @@
 <!-- White:      #eee -->
 <!-- Black:      #000 -->
 <!-- Dark Grey:  #333 -->
+<!-- Grey: #666 -->
 <!-- Light Grey: #ccc -->
 <!-- Blue:    #00aaff -->
 <!-- Cyan:    #22ffff -->
@@ -50,7 +51,7 @@
         <key>fontStyle</key>
         <string>italic</string>
         <key>foreground</key>
-        <string>#333</string> <!-- Dark Grey -->
+        <string>#666</string> <!-- Grey -->
       </dict>
     </dict>
     <dict>
